@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIPIKI - La Revolución del Bienestar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #A8DADC; /*#06D6A0;*/
+            --secondary-color: #FF6B6B;
+            --accent-color: #FFD; /*#FFDDC1; */
+            --background-color: #FFD; /*#FAF9F6;*/
+            --text-color: #333;
+            --hover-color: #EEC4A8;
+            --white-color: #FFFFFF;
+            --service-bg-color: #FAFAFA;
+        }
+        html, body { height: 100% }
+        body {
+            counter-set: section 100;
+            font-family: 'Fredoka', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            text-align: center;
+        }
+        h1, h2, h3 {
+            color: var(--secondary-color);
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .hero {
+            background: var(--primary-color);
+            padding: 50px 20px;
+            position: relative;
+            color: var(--white-color);
+            height: 45%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%) !important;
+            margin-bottom: -150px;
+            padding-bottom: 150px;
+        }
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: var(--accent-color);
+            color: var(--text-color);
+            font-size: 1.2em;
+            border-radius: 30px;
+            text-decoration: none;
+            margin-top: 20px;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+        .cta-button:hover {
+            background-color: var(--hover-color);
+            transform: scale(1.05);
+        }
+        .section {
+            padding: 50px 20px;
+            position: relative;
+            min-height: 45%;
+            font-size: counter(section);
+            background-color: var(--service-bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        body > *:nth-child(odd) {
+            clip-path: polygon(0 10%, 100% 0%, 100% 100%, 0 100%);
+            margin-bottom: -150px;
+            padding-bottom: 150px;
+        }
+        body > *:nth-child(even) {
+            clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
+            margin-bottom: -150px;
+            padding-bottom: 150px;
+        }
+        .parallax {
+            background-color: var(--service-bg-color);
+            background-attachment: fixed;
+            background-size: 30%;
+            background-position: center;
+            height: 30%;
+            /*clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
+            margin-bottom: -100px;
+            padding-bottom: 150px;*/
+        }
+/*        .parallax:nth-of-type(odd) {
+            clip-path: polygon(0 10%, 100% 0%, 100% 80%, 0 100%);
+            margin-bottom: -100px;
+            padding-bottom: 150px;
+        }
+        .parallax:nth-of-type(even) {
+            clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
+            margin-bottom: -100px;
+            padding-bottom: 150px;
+        }*/
+        .parallax-1 { background-image: url('https://plus.unsplash.com/premium_vector-1689096907767-4cb2a8773a91?q=80&w=2920&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); }
+        .parallax-2 { background-image: url('https://media.istockphoto.com/id/1347536969/es/vector/patr%C3%B3n-de-garabato-colorido-sin-costuras.webp?s=2048x2048&w=is&k=20&c=1g_udHJOPTTNVczDy4vzBp7dBnRwspmlH4wqr9I-5Ls='); }
+        .parallax-3 { background-image: url('https://media.istockphoto.com/id/1777252305/es/vector/multitud-de-personas-multinacionales-diversas-que-buscan-un-patr%C3%B3n-sin-fisuras.webp?s=2048x2048&w=is&k=20&c=TTN9yn_qF5ICfCnpFvVZYZ_tgxvgeGF55qfHPj10Pvk='); }
+        .services div {
+            display: inline-block;
+            width: 30%;
+            padding: 20px;
+            background: var(--service-bg-color);
+            margin: 10px;
+            border-radius: 30px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .services div:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+        }
+        .footer {
+            background: var(--secondary-color);
+            padding: 50px 20px;
+            clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%) !important;
+        }
+        .footer h2 {
+          color: var(--white-color);
+        }
+        @media (max-width: 768px) {
+            .services div {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+      <span>
+        <h1>¡La Revolución del Bienestar!</h1>
+        <p>Únete a nuestra comunidad y descubre una nueva forma de vivir mejor.</p>
+        <a href="#" class="cta-button">Únete a nuestra comunidad en WhatsApp</a>
+      </span>
+    </section>
+    
+    <div class="parallax parallax-1"></div>
+    
+    <section class="section">
+      <span>
+        <h2>¿Qué es BIPIKI?</h2>
+        <p>BIPIKI es una comunidad comprometida con el bienestar, el aprendizaje y la felicidad.</p>
+      </span>
+    </section>
+    
+    <div class="parallax parallax-2"></div>
+    
+    <section class="section services">
+       <span>
+        <h2>Nuestros Servicios</h2>
+        <div>
+            <h3>Cursos</h3>
+            <p>Aprende con expertos sobre bienestar y desarrollo personal.</p>
+        </div>
+        <div>
+            <h3>Membresías</h3>
+            <p>Únete a nuestra comunidad exclusiva y accede a contenido premium.</p>
+        </div>
+        <div>
+            <h3>Contrataciones</h3>
+            <p>Contrata nuestros servicios para eventos, charlas y más.</p>
+        </div>
+      </span>
+    </section>
+  
+    <div class="parallax parallax-3"></div>
+
+    <section class="section">
+      <span>
+        <h2>Testimonios</h2>
+        <p>"Desde que me uní a BIPIKI, mi bienestar ha mejorado muchísimo. ¡Gracias!" - María</p>
+      </span>
+    </section>
+    
+    <section class="footer">
+        <h2>¡Súmate a BIPIKI!</h2>
+        <a href="#" class="cta-button">Únete a nuestra comunidad en WhatsApp</a>
+    </section>
+</body>
+</html>
